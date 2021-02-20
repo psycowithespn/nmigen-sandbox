@@ -4,10 +4,13 @@ from nmigen.sim import Simulator
 from lfsr import Lfsr
 
 dut = Lfsr()
+
+
 def bench():
     yield dut.en.eq(1)
     for _ in range(100):
         yield
+
 
 sim = Simulator(dut)
 sim.add_clock(1e-6)

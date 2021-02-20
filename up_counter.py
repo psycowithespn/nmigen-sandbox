@@ -1,5 +1,6 @@
 from nmigen import *
 
+
 class UpCounter(Elaboratable):
     def __init__(self, limit):
         self.limit = limit

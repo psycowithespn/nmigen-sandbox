@@ -4,6 +4,8 @@ from nmigen.sim import Simulator
 from up_counter import UpCounter
 
 dut = UpCounter(25)
+
+
 def bench():
     yield dut.en.eq(0)
     for _ in range(30):
@@ -19,6 +21,7 @@ def bench():
 
     yield
     assert not (yield dut.ovf)
+
 
 sim = Simulator(dut)
 sim.add_clock(1e-6)

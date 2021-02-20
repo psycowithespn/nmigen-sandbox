@@ -3,6 +3,7 @@ from nmigen import *
 from axi_stream_rx import AxiStreamRx
 from axi_stream_tx import AxiStreamTx
 
+
 class AxiStreamTop(Elaboratable):
     def __init__(self):
         self.rx = AxiStreamRx()
