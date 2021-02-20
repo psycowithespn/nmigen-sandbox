@@ -5,6 +5,7 @@ from lfsr import Lfsr
 
 dut = Lfsr()
 def bench():
+    yield dut.en.eq(1)
     for _ in range(100):
         yield
 
