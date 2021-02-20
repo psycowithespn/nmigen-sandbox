@@ -12,6 +12,6 @@ class AxiStreamTop(Elaboratable):
         m = Module()
 
         m.submodules += [self.rx, self.tx]
-        self.tx.m_axis.link_slave(m, self.rx.s_axis)
+        m.d.comb += self.tx.m_axis.link_slave(self.rx.s_axis)
 
         return m
