@@ -7,7 +7,7 @@ class Lfsr(Elaboratable):
         self.out = Signal(out_bit_len, reset=init_state)
         self.tap_mask = Const(tap_mask)
 
-    def elaborate(self):
+    def elaborate(self, platform):
         m = Module()
 
         with m.If(self.en):
